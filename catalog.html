@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Каталог товаров учебного интернет-магазина."
+    >
+    <title>Каталог товаров — Учебный интернет-магазин</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="site-header__inner">
+
+        <a class="site-header__logo" href="index.html">
+            Учебный интернет-магазин
+        </a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item">
+                    <a class="site-nav__link" href="index.html">Главная</a>
+                </li>
+                <li class="site-nav__item">
+                    <a class="site-nav__link" href="catalog.html">Каталог</a>
+                </li>
+                <li class="site-nav__item">
+                    <a class="site-nav__link" href="contacts.html">Контакты</a>
+                </li>
+                <li class="site-nav__item">
+                    <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+                </li>
+                <li class="site-nav__item">
+                    <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+                </li>
+                <li class="site-nav__item">
+                    <a class="site-nav__link" href="index.html#contacts">Связаться</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main class="page-content">
+
+    <div class="breadcrumbs">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+        <span class="breadcrumbs__current">Каталог</span>
+    </div>
+
+    <section class="catalog-layout">
+
+        <aside class="catalog-filters">
+            <h2 class="catalog-filters__title">Фильтры</h2>
+
+            <form class="filters-form" action="#" method="get">
+
+                <fieldset class="filters-form__group">
+                    <legend class="filters-form__legend">Категория</legend>
+
+                    <label class="filters-form__label">
+                        <input
+                            class="filters-form__checkbox"
+                            type="checkbox"
+                            name="category"
+                            value="all"
+                        >
+                        Все товары
+                    </label>
+
+                    <label class="filters-form__label">
+                        <input
+                            class="filters-form__checkbox"
+                            type="checkbox"
+                            name="category"
+                            value="popular"
+                        >
+                        Популярные
+                    </label>
+
+                    <label class="filters-form__label">
+                        <input
+                            class="filters-form__checkbox"
+                            type="checkbox"
+                            name="category"
+                            value="new"
+                        >
+                        Новинки
+                    </label>
+                </fieldset>
+
+                <fieldset class="filters-form__group">
+                    <legend class="filters-form__legend">Цена</legend>
+
+                    <label class="filters-form__label" for="price-from">
+                        От:
+                    </label>
+
+                    <input
+                        class="filters-form__input"
+                        id="price-from"
+                        type="number"
+                        name="price_from"
+                        min="0"
+                        placeholder="0"
+                    >
+
+                    <label class="filters-form__label" for="price-to">
+                        До:
+                    </label>
+
+                    <input
+                        class="filters-form__input"
+                        id="price-to"
+                        type="number"
+                        name="price_to"
+                        min="0"
+                        placeholder="100000"
+                    >
+                </fieldset>
+
+                <button class="button button--primary" type="submit">
+                    Применить
+                </button>
+
+            </form>
+        </aside>
+
+        <section class="catalog-products">
+            <h2 class="catalog-products__title">Список товаров</h2>
+
+            <div class="products-grid">
+
+                <article class="product-card product-card--featured">
+
+                    <span class="product-card__badge product-card__badge--hit">
+                        Хит продаж
+                    </span>
+
+                    <picture class="product-card__picture">
+                        <img
+                            class="product-card__image"
+                            src="images/laptop.jpg"
+                            srcset="images/laptop.jpg 679w"
+                            sizes="(max-width: 640px) 100vw, 300px"
+                            alt="Ноутбук на белом фоне"
+                            width="679"
+                            height="452"
+                            loading="lazy"
+                        >
+                    </picture>
+
+                    <h3 class="product-card__title">Ноутбук</h3>
+
+                    <p class="product-card__description">
+                        Современный ноутбук для работы и учёбы.
+                    </p>
+
+                    <p class="product-card__price">
+                        Цена: 70 000 руб.
+                    </p>
+
+                    <a class="product-card__details-link" href="product.html">
+                        Подробнее
+                    </a>
+
+                    <button
+                        class="button button--primary product-card__button"
+                        type="button"
+                        data-product="Ноутбук"
+                    >
+                        Заказать
+                    </button>
+
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Смартфон</h3>
+                    <p class="product-card__description">
+                        Удобный смартфон для повседневного использования.
+                    </p>
+                    <p class="product-card__price">Цена: 45 000 руб.</p>
+                    <a class="product-card__details-link" href="product.html">Подробнее</a>
+                    <button class="button button--primary product-card__button"
+                            type="button" data-product="Смартфон">
+                        Заказать
+                    </button>
+                </article>
+
+                <article class="product-card product-card--new">
+                    <span class="product-card__badge product-card__badge--new">Новинка</span>
+                    <h3 class="product-card__title">Наушники</h3>
+                    <p class="product-card__description">
+                        Беспроводные наушники с качественным звуком.
+                    </p>
+                    <p class="product-card__price">Цена: 8 000 руб.</p>
+                    <a class="product-card__details-link" href="product.html">Подробнее</a>
+                    <button class="button button--primary product-card__button"
+                            type="button" data-product="Наушники">
+                        Заказать
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Планшет</h3>
+                    <p class="product-card__description">
+                        Компактное устройство для чтения, учёбы и просмотра видео.
+                    </p>
+                    <p class="product-card__price">Цена: 32 000 руб.</p>
+                    <a class="product-card__details-link" href="product.html">Подробнее</a>
+                    <button class="button button--primary product-card__button"
+                            type="button" data-product="Планшет">
+                        Заказать
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Клавиатура</h3>
+                    <p class="product-card__description">
+                        Удобная клавиатура для работы за компьютером.
+                    </p>
+                    <p class="product-card__price">Цена: 4 500 руб.</p>
+                    <a class="product-card__details-link" href="product.html">Подробнее</a>
+                    <button class="button button--primary product-card__button"
+                            type="button" data-product="Клавиатура">
+                        Заказать
+                    </button>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Мышь</h3>
+                    <p class="product-card__description">
+                        Компьютерная мышь для повседневных задач.
+                    </p>
+                    <p class="product-card__price">Цена: 2 000 руб.</p>
+                    <a class="product-card__details-link" href="product.html">Подробнее</a>
+                    <button class="button button--primary product-card__button"
+                            type="button" data-product="Мышь">
+                        Заказать
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p class="site-footer__text">
+        &copy; 2026 Учебный интернет-магазин
+    </p>
+</footer>
+
+<div class="modal" id="orderModal" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+
+    <div class="modal__content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="orderModalTitle">
+
+        <button class="button button--secondary order-dialog__close"
+                type="button"
+                aria-label="Закрыть окно"
+                data-modal-close>
+            &times;
+        </button>
+
+        <h2 class="order-dialog__title" id="orderModalTitle">Оформление заявки</h2>
+
+        <form class="order-form" id="orderForm" novalidate>
+            <input type="hidden" id="productInput" name="product">
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="nameInput">Имя</label>
+                <input class="order-form__input" type="text" id="nameInput" name="name" placeholder="Введите имя" required>
+                <span class="order-form__error" id="nameError"></span>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="phoneInput">Телефон</label>
+                <input class="order-form__input" type="tel" id="phoneInput" name="phone" placeholder="+7 (___) ___-__-__" required>
+                <span class="order-form__error" id="phoneError"></span>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="emailInput">Email</label>
+                <input class="order-form__input" type="email" id="emailInput" name="email" placeholder="example@mail.ru" required>
+                <span class="order-form__error" id="emailError"></span>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="dateInput">Дата</label>
+                <input class="order-form__input" type="date" id="dateInput" name="date" required>
+                <span class="order-form__error" id="dateError"></span>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="topicInput">Товар</label>
+                <select class="order-form__select" id="topicInput" name="topic" required>
+                    <option value="">Выберите товар</option>
+                    <option value="Товар 1">Товар 1</option>
+                    <option value="Товар 2">Товар 2</option>
+                    <option value="Товар 3">Товар 3</option>
+                </select>
+                <span class="order-form__error" id="topicError"></span>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="consentInput">
+                    <input class="order-form__checkbox" type="checkbox" id="consentInput" name="consent" required>
+                    Я согласен(на) на обработку данных
+                </label>
+                <span class="order-form__error" id="consentError"></span>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="commentInput">Комментарий</label>
+                <textarea class="order-form__textarea" id="commentInput" name="comment" rows="4" placeholder="Ваш комментарий"></textarea>
+                <span class="order-form__error" id="commentError"></span>
+            </div>
+
+            <div class="order-form__actions">
+                <button class="button button--primary" type="submit">Отправить заявку</button>
+            </div>
+
+            <p class="success-message" id="successMessage"></p>
+        </form>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
