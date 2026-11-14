@@ -1,0 +1,151 @@
+/*
+  Адаптивные стили для КР-3.
+  Подход: Mobile First.
+*/
+
+/* Базовые настройки */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Мобильная шапка */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 12px;
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .site-nav__list {
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav__link {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}
+
+/* Каталог: мобильная версия */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "filters"
+    "products";
+  gap: var(--space-md, 16px);
+  width: 100%;
+  min-width: 0;
+}
+
+.catalog-filters {
+  grid-area: filters;
+  position: static;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  z-index: auto;
+}
+
+.catalog-products {
+  grid-area: products;
+  min-width: 0;
+  width: 100%;
+}
+
+.filters-form {
+  width: 100%;
+  min-width: 0;
+}
+
+.filters-form input {
+  max-width: 100%;
+}
+
+/* Карточки товаров */
+.products-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md, 16px);
+  width: 100%;
+  min-width: 0;
+}
+
+.product-card {
+  min-width: 0;
+  width: 100%;
+}
+
+.product-card__title,
+.product-card__description {
+  overflow-wrap: anywhere;
+}
+
+/* Планшеты */
+@media (min-width: 640px) {
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Компьютеры */
+@media (min-width: 1024px) {
+  .catalog-layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-areas: "filters products";
+    align-items: start;
+    gap: var(--space-lg, 24px);
+  }
+
+  .catalog-filters {
+    position: static;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Большие экраны */
+@media (min-width: 1280px) {
+  .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Адаптивное изображение ноутбука */
+.product-card__picture {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    overflow: hidden;
+    border-radius: var(--radius-md, 8px);
+}
+
+.product-card__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
