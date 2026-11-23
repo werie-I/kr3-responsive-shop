@@ -1,0 +1,625 @@
+/* Практика №14 — Mobile First. Этот файл подключается после style.css и kr3.css. */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+img, video, iframe {
+    max-width: 100%;
+}
+img {
+    height: auto;
+}
+.container {
+    width: min(100% - 28px, var(--max, 1200px));
+}
+/* Базовая раскладка для узких экранов. */
+.header-inner {
+    min-height: 66px;
+    height: auto;
+    gap: 8px;
+}
+.header-actions {
+    min-width: 0;
+    gap: 6px;
+}
+.site-search {
+    flex: 1 1 112px;
+    min-width: 0;
+    max-width: 130px;
+}
+.site-search input {
+    min-width: 0;
+    width: 100%;
+}
+.account-btn {
+    display: none;
+}
+.menu-toggle {
+    display: grid;
+    flex: 0 0 40px;
+}
+.nav {
+    display: none;
+}
+.nav.open {
+    display: flex;
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    top: calc(100% + 1px);
+    z-index: 1200;
+    padding: 14px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 0 0 18px 18px;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+}
+.nav.open > a, .nav.open .nav-more-toggle {
+    min-height: 44px;
+    padding: 12px;
+}
+.products-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+}
+.categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+.catalog-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+}
+.catalog-layout > * {
+    min-width: 0;
+}
+.filters {
+    position: static;
+    width: 100%;
+}
+.catalog-toolbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.product-detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+}
+.product-detail-image img {
+    min-height: 280px;
+    max-height: 430px;
+}
+.form-grid, .contact-grid, .assembly-layout {
+    grid-template-columns: minmax(0, 1fr);
+}
+.field.full {
+    grid-column: auto;
+}
+.footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+}
+.footer-grid > div:first-child {
+    grid-column: auto;
+}
+.map-frame {
+    height: 320px;
+}
+.order-wrap {
+    width: 100%;
+    padding: 20px;
+}
+.table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+:where(a, button, input, select, textarea, summary):focus-visible {
+    outline: 3px solid #ff784f;
+    outline-offset: 3px;
+}
+.skip-link {
+    left: -9999px;
+    top: 8px;
+}
+.skip-link:focus, .skip-link:focus-visible {
+    left: 12px;
+    top: 12px;
+    z-index: 2000;
+    color: #17221d;
+    background: #fff;
+    border: 2px solid #17221d;
+    border-radius: 8px;
+}
+@media (min-width: 480px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .product-card {
+        min-width: 0;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+}
+@media (min-width: 701px) {
+    .container {
+        width: min(var(--max, 1200px), calc(100% - 40px));
+    }
+    .header-inner {
+        height: 76px;
+        gap: 20px;
+    }
+    .header-actions {
+        gap: 10px;
+    }
+    .site-search {
+        max-width: 185px;
+        flex: 0 1 185px;
+    }
+    .site-search input {
+        width: 140px;
+    }
+    .account-btn {
+        display: grid;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .nav, .nav.open {
+        display: flex;
+        position: static;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        flex-direction: row;
+        align-items: center;
+    }
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .form-grid, .contact-grid, .assembly-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr;
+    }
+    .footer-grid > div:first-child {
+        grid-column: auto;
+    }
+    .map-frame {
+        height: 430px;
+    }
+}
+@media (min-width: 960px) {
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .catalog-layout {
+        grid-template-columns: minmax(210px, 245px) minmax(0, 1fr);
+        gap: 24px;
+    }
+    .filters {
+        position: sticky;
+        top: 100px;
+    }
+    .product-detail {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 42px;
+    }
+}
+@media (min-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+    .site-search {
+        max-width: 104px;
+    }
+    .header-actions {
+        gap: 4px;
+    }
+    .categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* Таблица характеристик: читаемая структура и прокрутка внутри контейнера. */
+.product-facts {
+    margin-top: 28px;
+}
+.product-facts h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+.product-facts-table th, .product-facts-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    font-size: 13px;
+}
+.product-facts-table th {
+    width: 48%;
+    color: var(--muted);
+    font-weight: 700;
+}
+.product-facts-table td {
+    color: var(--ink);
+    font-weight: 800;
+}
+.product-facts-table tr:last-child th, .product-facts-table tr:last-child td {
+    border-bottom: 0;
+}
+@media (max-width: 420px) {
+    .product-facts-table {
+        min-width: 360px;
+    }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+    .account-btn {
+        display: none;
+    }
+    .nav {
+        gap: 12px;
+    }
+    .header-actions {
+        gap: 6px;
+    }
+    .site-search {
+        max-width: 130px;
+    }
+}
+/* Контраст текста и индикатора фокуса: цветовые акценты остаются частью DOMA. */
+.eyebrow, h1 em, h2 em, .nav a:hover, .nav a[aria-current="page"] {
+    color: #586f10;
+}
+:where(a, button, input, select, textarea, summary):focus-visible {
+    outline-color: #b44b2d;
+}
+:root[data-theme="dark"] :where(a, button, input, select, textarea, summary):focus-visible {
+    outline-color: #d7ff4f;
+}
+
+
+/* Финальная коррекция адаптивной шапки и доступности DOMA. */
+@media (max-width: 700px) {
+    .header-inner {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .header-inner > .logo {
+        display: flex;
+        flex: 0 1 auto;
+        align-items: center;
+        min-width: 0;
+        gap: 5px;
+        font-size: clamp(19px, 5.4vw, 25px);
+        white-space: nowrap;
+    }
+
+    .header-inner > .logo .logo-mark {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .header-actions {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        min-width: 0;
+        gap: 5px;
+    }
+
+    .header-actions .site-search {
+        flex: 1 1 88px;
+        width: auto;
+        min-width: 0;
+        max-width: 145px;
+    }
+
+    .header-actions .site-search input {
+        width: 100%;
+        min-width: 0;
+        padding-left: 10px;
+        font-size: 12px;
+    }
+
+    .header-actions .icon-btn,
+    .header-actions .account-btn,
+    .header-actions .basket-btn,
+    .header-actions .menu-toggle {
+        display: grid;
+        flex: 0 0 36px;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        padding: 0;
+        place-items: center;
+    }
+
+    .header-actions .header-action-label {
+        display: none;
+    }
+
+    .header-actions .menu-toggle {
+        display: grid;
+    }
+
+    .product-facts {
+        max-width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product-facts-table {
+        min-width: 360px;
+    }
+
+    #domaChat.chat-widget {
+        left: 12px !important;
+        right: auto !important;
+        bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+        max-width: calc(100vw - 24px);
+    }
+
+    #domaChat .chat-panel {
+        width: min(340px, calc(100vw - 24px));
+        max-width: calc(100vw - 24px);
+        height: min(390px, 62dvh);
+        max-height: calc(100dvh - 110px);
+        margin-bottom: 10px;
+    }
+
+    #domaChat .chat-launch {
+        min-height: 48px;
+        padding: 12px 18px;
+        border-radius: 26px;
+    }
+}
+
+@media (max-width: 390px) {
+    .header-inner {
+        gap: 4px;
+    }
+
+    .header-inner > .logo {
+        font-size: 18px;
+        gap: 3px;
+    }
+
+    .header-inner > .logo .logo-mark {
+        flex-basis: 31px;
+        width: 31px;
+        height: 31px;
+    }
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .header-actions .site-search {
+        flex-basis: 72px;
+        max-width: 112px;
+    }
+
+    .header-actions .icon-btn,
+    .header-actions .account-btn,
+    .header-actions .basket-btn,
+    .header-actions .menu-toggle {
+        flex-basis: 33px;
+        width: 33px;
+        min-width: 33px;
+        height: 33px;
+    }
+}
+
+@media (max-width: 350px) {
+    .header-inner > .logo-word {
+        display: none;
+    }
+
+    .header-actions .site-search {
+        flex-basis: 68px;
+        max-width: 100px;
+    }
+}
+
+/* Не обрезаем таблицу характеристик: прокрутка остаётся внутри её блока. */
+.product-facts-table {
+    max-width: 100%;
+}
+
+/* Единое положение и размеры консультанта на широких экранах. */
+@media (min-width: 701px) {
+    #domaChat.chat-widget {
+        left: 20px !important;
+        right: auto !important;
+        bottom: 22px !important;
+    }
+
+    #domaChat .chat-panel {
+        width: 340px;
+        max-width: min(340px, calc(100vw - 40px));
+        height: 390px;
+    }
+}
+
+
+/* Mobile layout refinement: compact header + reordered footer blocks. */
+@media (max-width: 700px) {
+    .header-inner {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .header-inner > .logo {
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .header-actions {
+        display: flex;
+        flex: 1 1 auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        min-width: 0;
+        gap: 5px;
+    }
+
+    /* Hamburger is always visible and placed before the account/cart controls. */
+    .header-actions .menu-toggle {
+        display: grid !important;
+        order: 0;
+        flex: 0 0 38px;
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .header-actions .site-search {
+        order: 1;
+        flex: 1 1 90px;
+        width: auto;
+        min-width: 0;
+        max-width: 138px;
+    }
+
+    .header-actions .basket-btn {
+        order: 2;
+        display: grid;
+        flex: 0 0 38px;
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+    }
+
+    .header-actions .account-btn {
+        order: 3;
+        display: grid !important;
+        flex: 0 0 38px;
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+    }
+
+    .header-actions .header-action-label {
+        display: none;
+    }
+
+    .nav.open {
+        left: 14px;
+        right: 14px;
+        top: calc(100% + 1px);
+        z-index: 1500;
+        max-height: min(70dvh, 520px);
+        overflow-y: auto;
+    }
+
+    /* Footer: navigation first, then contact, then DOMA brand. */
+    .footer-grid,
+    .footer-grid-final {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .footer-navigation {
+        order: 1;
+        width: 100%;
+    }
+
+    .footer-contact {
+        order: 2;
+        width: 100%;
+    }
+
+    .footer-brand-final {
+        order: 3;
+        width: 100%;
+    }
+
+    .footer-navigation,
+    .footer-contact,
+    .footer-brand-final {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 390px) {
+    .header-inner {
+        gap: 4px;
+    }
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .header-inner > .logo .logo-word {
+        font-size: 19px;
+    }
+
+    .header-actions .menu-toggle,
+    .header-actions .basket-btn,
+    .header-actions .account-btn {
+        flex-basis: 34px;
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+    }
+
+    .header-actions .site-search {
+        flex-basis: 72px;
+        max-width: 112px;
+    }
+}
+
+@media (max-width: 350px) {
+    .header-inner > .logo .logo-word {
+        display: none;
+    }
+
+    .header-actions .site-search {
+        flex-basis: 64px;
+        max-width: 96px;
+    }
+}
