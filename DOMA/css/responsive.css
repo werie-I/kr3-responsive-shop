@@ -623,3 +623,110 @@ table {
         max-width: 96px;
     }
 }
+
+
+/* Финальная правка мобильной шапки и нижней навигации DOMA. */
+@media (max-width: 700px) {
+    /* На узком экране переключатель темы убираем в меню: кабинет остаётся видимым. */
+    .header-actions #themeToggle {
+        display: none !important;
+    }
+
+    .header-inner {
+        gap: 6px;
+    }
+
+    .header-inner > .logo {
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+
+    .header-actions {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 5px;
+    }
+
+    .header-actions .menu-toggle {
+        order: 0 !important;
+        display: grid !important;
+        flex: 0 0 38px;
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+    }
+
+    .header-actions .site-search {
+        order: 1 !important;
+        flex: 1 1 80px;
+        min-width: 0;
+        max-width: 138px;
+    }
+
+    .header-actions .basket-btn {
+        order: 2 !important;
+        flex: 0 0 38px;
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+    }
+
+    .header-actions .account-btn {
+        order: 3 !important;
+        display: grid !important;
+        flex: 0 0 38px;
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+    }
+
+    /* Навигация и контакты — один общий блок с двумя самостоятельными секциями. */
+    .footer-grid-final {
+        gap: 22px;
+    }
+
+    .footer-navigation,
+    .footer-contact {
+        background: #20352a;
+        border-left: 1px solid #405747;
+        border-right: 1px solid #405747;
+        padding: 24px 22px;
+        width: 100%;
+    }
+
+    .footer-navigation {
+        border-top: 1px solid #405747;
+        border-bottom: 1px solid #405747;
+        border-radius: 22px 22px 0 0;
+        margin-bottom: -22px;
+    }
+
+    .footer-contact {
+        border-bottom: 1px solid #405747;
+        border-radius: 0 0 22px 22px;
+    }
+}
+
+@media (max-width: 390px) {
+    .header-inner > .logo .logo-word {
+        font-size: 18px;
+    }
+
+    .header-actions {
+        gap: 4px;
+    }
+
+    .header-actions .menu-toggle,
+    .header-actions .basket-btn,
+    .header-actions .account-btn {
+        flex-basis: 35px;
+        width: 35px;
+        min-width: 35px;
+        height: 35px;
+    }
+
+    .header-actions .site-search {
+        flex-basis: 68px;
+        max-width: 110px;
+    }
+}
