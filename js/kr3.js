@@ -284,6 +284,25 @@
     });
     wrap.append(trigger, menu);
     nav.append(wrap);
+
+    // Mobile-only shortcuts: keep the header uncluttered while preserving access to key tools.
+    const mobileTools = document.createElement('div');
+    mobileTools.className = 'mobile-menu-tools';
+    mobileTools.innerHTML = `
+      <a href="order.html">Корзина</a>
+      <a href="favorites.html">Избранное</a>
+      <a href="delivery.html">Доставка и оплата</a>
+      <button type="button" id="mobileThemeToggle">Сменить тему</button>
+    `;
+    nav.append(mobileTools);
+    const mobileThemeToggle = $('#mobileThemeToggle');
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener('click', () => {
+        const themeButton = $('#themeToggle');
+        if (themeButton) themeButton.click();
+      });
+    }
+
     trigger.addEventListener('click', () => {
       const open = wrap.classList.toggle('open');
       trigger.setAttribute('aria-expanded', String(open))

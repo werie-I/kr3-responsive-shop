@@ -530,3 +530,121 @@ table {
     }
     .header-actions .site-search { flex-basis: 68px; max-width: 110px; }
 }
+
+
+/* DOMA mobile header v2: keep only brand, menu and personal account in the top bar. */
+@media (max-width: 700px) {
+  .header-inner {
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:8px !important;
+    width:calc(100% - 28px) !important;
+    min-width:0 !important;
+  }
+  .header-inner > .logo {
+    flex:0 1 auto !important;
+    min-width:0 !important;
+    white-space:nowrap !important;
+  }
+  .header-actions {
+    display:flex !important;
+    flex:0 0 auto !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    gap:8px !important;
+    min-width:0 !important;
+  }
+  /* Search, theme and cart are moved to the hamburger navigation on mobile. */
+  .header-actions #siteSearch,
+  .header-actions #themeToggle,
+  .header-actions .basket-btn {
+    display:none !important;
+  }
+  .header-actions .account-btn,
+  .header-actions .menu-toggle {
+    display:grid !important;
+    flex:0 0 40px !important;
+    width:40px !important;
+    min-width:40px !important;
+    height:40px !important;
+    padding:0 !important;
+    place-items:center !important;
+  }
+  .header-actions .account-btn { order:1 !important; }
+  .header-actions .menu-toggle { order:2 !important; }
+  .nav {
+    left:14px !important;
+    right:14px !important;
+    top:calc(100% + 1px) !important;
+    z-index:1600 !important;
+    max-height:min(72dvh,560px) !important;
+    overflow-y:auto !important;
+  }
+  .nav.open { display:flex !important; }
+  .nav a {
+    display:flex !important;
+    align-items:center !important;
+    min-height:44px !important;
+  }
+  .nav .mobile-menu-tools {
+    display:grid;
+    gap:4px;
+    padding-top:10px;
+    margin-top:8px;
+    border-top:1px solid var(--line);
+  }
+  .nav .mobile-menu-tools a,
+  .nav .mobile-menu-tools button {
+    min-height:44px;
+    padding:11px 12px;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    color:var(--ink);
+    text-align:left;
+    font:700 14px Manrope,Arial,sans-serif;
+    text-decoration:none;
+  }
+  .nav .mobile-menu-tools a:hover,
+  .nav .mobile-menu-tools button:hover { background:#edf0e8; }
+  /* Footer navigation + contacts form one outer card, while remaining separate sections. */
+  .footer-grid-final {
+    gap:0 !important;
+  }
+  .footer-brand-final {
+    margin-bottom:22px !important;
+  }
+  .footer-navigation,
+  .footer-contact {
+    width:100% !important;
+    background:#20352a !important;
+    border-left:1px solid #405747 !important;
+    border-right:1px solid #405747 !important;
+    padding:24px 22px !important;
+  }
+  .footer-navigation {
+    border-top:1px solid #405747 !important;
+    border-bottom:0 !important;
+    border-radius:22px 22px 0 0 !important;
+    margin:0 !important;
+  }
+  .footer-contact {
+    border-top:1px solid rgba(215,255,79,.22) !important;
+    border-bottom:1px solid #405747 !important;
+    border-radius:0 0 22px 22px !important;
+    margin:0 !important;
+  }
+}
+@media (max-width:390px) {
+  .header-inner { width:calc(100% - 24px) !important; gap:6px !important; }
+  .header-inner > .logo .logo-word { font-size:19px !important; }
+  .header-actions { gap:6px !important; }
+  .header-actions .account-btn,
+  .header-actions .menu-toggle {
+    flex-basis:36px !important; width:36px !important;
+    min-width:36px !important; height:36px !important;
+  }
+}
