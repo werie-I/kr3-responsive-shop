@@ -532,119 +532,171 @@ table {
 }
 
 
-/* DOMA mobile header v2: keep only brand, menu and personal account in the top bar. */
+/* FINAL MOBILE FOOTER GRID: navigation on the left, contacts on the right. */
 @media (max-width: 700px) {
-  .header-inner {
-    display:flex !important;
-    flex-wrap:nowrap !important;
-    align-items:center !important;
-    justify-content:space-between !important;
-    gap:8px !important;
-    width:calc(100% - 28px) !important;
-    min-width:0 !important;
-  }
-  .header-inner > .logo {
-    flex:0 1 auto !important;
-    min-width:0 !important;
-    white-space:nowrap !important;
-  }
-  .header-actions {
-    display:flex !important;
-    flex:0 0 auto !important;
-    flex-wrap:nowrap !important;
-    align-items:center !important;
-    justify-content:flex-end !important;
-    gap:8px !important;
-    min-width:0 !important;
-  }
-  /* Search, theme and cart are moved to the hamburger navigation on mobile. */
-  .header-actions #siteSearch,
-  .header-actions #themeToggle,
-  .header-actions .basket-btn {
-    display:none !important;
-  }
-  .header-actions .account-btn,
-  .header-actions .menu-toggle {
-    display:grid !important;
-    flex:0 0 40px !important;
-    width:40px !important;
-    min-width:40px !important;
-    height:40px !important;
-    padding:0 !important;
-    place-items:center !important;
-  }
-  .header-actions .account-btn { order:1 !important; }
-  .header-actions .menu-toggle { order:2 !important; }
-  .nav {
-    left:14px !important;
-    right:14px !important;
-    top:calc(100% + 1px) !important;
-    z-index:1600 !important;
-    max-height:min(72dvh,560px) !important;
-    overflow-y:auto !important;
-  }
-  .nav.open { display:flex !important; }
-  .nav a {
-    display:flex !important;
-    align-items:center !important;
-    min-height:44px !important;
-  }
-  .nav .mobile-menu-tools {
-    display:grid;
-    gap:4px;
-    padding-top:10px;
-    margin-top:8px;
-    border-top:1px solid var(--line);
-  }
-  .nav .mobile-menu-tools a,
-  .nav .mobile-menu-tools button {
-    min-height:44px;
-    padding:11px 12px;
-    border:0;
-    border-radius:10px;
-    background:transparent;
-    color:var(--ink);
-    text-align:left;
-    font:700 14px Manrope,Arial,sans-serif;
-    text-decoration:none;
-  }
-  .nav .mobile-menu-tools a:hover,
-  .nav .mobile-menu-tools button:hover { background:#edf0e8; }
-  /* Footer navigation + contacts form one outer card, while remaining separate sections. */
   .footer-grid-final {
-    gap:0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    column-gap: 12px !important;
+    row-gap: 16px !important;
+    align-items: stretch !important;
   }
-  .footer-brand-final {
-    margin-bottom:22px !important;
+
+  .footer-grid-final > .footer-brand-final {
+    grid-column: 1 / -1 !important;
+    margin: 0 0 6px !important;
   }
-  .footer-navigation,
-  .footer-contact {
-    width:100% !important;
-    background:#20352a !important;
-    border-left:1px solid #405747 !important;
-    border-right:1px solid #405747 !important;
-    padding:24px 22px !important;
+
+  .footer-grid-final > .footer-navigation {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 18px 12px !important;
+    border: 1px solid #405747 !important;
+    border-radius: 18px !important;
+    background: #20352a !important;
   }
-  .footer-navigation {
-    border-top:1px solid #405747 !important;
-    border-bottom:0 !important;
-    border-radius:22px 22px 0 0 !important;
-    margin:0 !important;
+
+  .footer-grid-final > .footer-contact {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 18px 12px !important;
+    border: 1px solid #405747 !important;
+    border-radius: 18px !important;
+    background: #20352a !important;
   }
-  .footer-contact {
-    border-top:1px solid rgba(215,255,79,.22) !important;
-    border-bottom:1px solid #405747 !important;
-    border-radius:0 0 22px 22px !important;
-    margin:0 !important;
+
+  .footer-grid-final > .footer-navigation h3,
+  .footer-grid-final > .footer-contact h3 {
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    letter-spacing: .08em !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .footer-grid-final > .footer-navigation .footer-links,
+  .footer-grid-final > .footer-contact .footer-links {
+    min-width: 0 !important;
+    gap: 12px !important;
+  }
+
+  .footer-grid-final > .footer-navigation .footer-links a,
+  .footer-grid-final > .footer-contact .footer-links a,
+  .footer-grid-final > .footer-contact .footer-links > span {
+    min-width: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  .footer-grid-final > .footer-contact .footer-icon {
+    flex: 0 0 18px !important;
+    margin-right: 5px !important;
   }
 }
-@media (max-width:390px) {
-  .header-inner { width:calc(100% - 24px) !important; gap:6px !important; }
-  .header-inner > .logo .logo-word { font-size:19px !important; }
-  .header-actions { gap:6px !important; }
-  .header-actions .account-btn,
+
+@media (max-width: 360px) {
+  .footer-grid-final {
+    column-gap: 8px !important;
+  }
+  .footer-grid-final > .footer-navigation,
+  .footer-grid-final > .footer-contact {
+    padding: 15px 9px !important;
+  }
+  .footer-grid-final > .footer-navigation .footer-links a,
+  .footer-grid-final > .footer-contact .footer-links a,
+  .footer-grid-final > .footer-contact .footer-links > span {
+    font-size: 12px !important;
+  }
+}
+
+
+/* FINAL HEADER: home + DOMA + menu + search + basket + personal account.
+   Theme toggle stays in the hamburger menu; account remains visible. */
+@media (max-width: 700px) {
+  .header-inner {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+  }
+  .header-inner > .logo {
+    display: flex !important;
+    flex: 0 1 auto !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    gap: 5px !important;
+  }
+  .header-actions {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    min-width: 0 !important;
+    gap: 5px !important;
+  }
+  .header-actions #themeToggle { display: none !important; }
   .header-actions .menu-toggle {
-    flex-basis:36px !important; width:36px !important;
-    min-width:36px !important; height:36px !important;
+    display: grid !important;
+    order: 0 !important;
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+  }
+  .header-actions .site-search {
+    display: flex !important;
+    order: 1 !important;
+    flex: 1 1 88px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 145px !important;
+  }
+  .header-actions .basket-btn {
+    display: grid !important;
+    order: 2 !important;
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+  }
+  .header-actions .account-btn {
+    display: grid !important;
+    order: 3 !important;
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+  }
+  .header-actions .site-search input {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 10px !important;
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 390px) {
+  .header-actions { gap: 4px !important; }
+  .header-actions .menu-toggle,
+  .header-actions .basket-btn,
+  .header-actions .account-btn {
+    flex-basis: 34px !important;
+    width: 34px !important;
+    min-width: 34px !important;
+    height: 34px !important;
+  }
+  .header-actions .site-search {
+    flex-basis: 68px !important;
+    max-width: 110px !important;
   }
 }
