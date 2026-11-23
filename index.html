@@ -1,240 +1,860 @@
-
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Учебный интернет-магазин: каталог товаров, информация о проекте и ответы на частые вопросы.">
-    <title>Учебный интернет-магазин</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/main.js" defer></script>
-</head>
-
-<body>
-
-<header class="site-header">
-    <div class="site-header__inner">
-        <a class="site-header__logo" href="index.html">ShopProject</a>
-
-        <nav class="site-nav" aria-label="Основная навигация">
-            <ul class="site-nav__list">
-                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформление заказа</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="#faq">Вопросы</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-
-    <section class="hero">
-        <h1 class="hero__title">Учебный интернет-магазин</h1>
-        <p class="hero__description">
-            Учебный проект интернет-магазина с каталогом товаров,
-            подробными карточками, формой заказа и справочной информацией.
-        </p>
-        <a class="button button--primary" href="catalog.html">Перейти к товарам</a>
-    </section>
-
-    <section class="section" id="advantages">
-        <h2 class="section__title">Преимущества проекта</h2>
-        <ul class="advantages-list">
-            <li class="advantages-list__item">Понятная HTML-структура;</li>
-            <li class="advantages-list__item">Семантические блоки страницы;</li>
-            <li class="advantages-list__item">Единая система CSS-классов по БЭМ;</li>
-            <li class="advantages-list__item">Адаптивная сетка товаров;</li>
-            <li class="advantages-list__item">Форма заказа с проверкой введённых данных.</li>
-        </ul>
-    </section>
-
-    <section class="section" id="popular">
-        <h2 class="section__title">Популярные товары</h2>
-
-        <div class="products-grid">
-
-            <article class="product-card product-card--featured">
-                <span class="product-card__badge product-card__badge--hit">Хит продаж</span>
-                <h3 class="product-card__title">Ноутбук</h3>
-                <p class="product-card__description">Современный ноутбук для работы и учёбы.</p>
-                <p class="product-card__price">Цена: 70 000 руб.</p>
-                <a class="product-card__details-link" href="product.html">Подробнее</a>
-                <button class="button button--primary product-card__button" type="button" data-product="Ноутбук">Заказать</button>
-            </article>
-
-            <article class="product-card">
-                <h3 class="product-card__title">Смартфон</h3>
-                <p class="product-card__description">Удобный смартфон для повседневного использования.</p>
-                <p class="product-card__price">Цена: 45 000 руб.</p>
-                <a class="product-card__details-link" href="product.html">Подробнее</a>
-                <button class="button button--primary product-card__button" type="button" data-product="Смартфон">Заказать</button>
-            </article>
-
-            <article class="product-card product-card--new">
-                <span class="product-card__badge product-card__badge--new">Новинка</span>
-                <h3 class="product-card__title">Наушники</h3>
-                <p class="product-card__description">Беспроводные наушники с качественным звуком.</p>
-                <p class="product-card__price">Цена: 8 000 руб.</p>
-                <a class="product-card__details-link" href="product.html">Подробнее</a>
-                <button class="button button--primary product-card__button" type="button" data-product="Наушники">Заказать</button>
-            </article>
-
-        </div>
-    </section>
-
-    <aside class="aside-info">
-        <h2 class="aside-info__title">Информация для студентов</h2>
-        <p class="aside-info__text">
-            Проект демонстрирует многостраничную структуру сайта,
-            Flexbox, CSS Grid, методологию БЭМ, формы и модальное окно.
-        </p>
-    </aside>
-
-    <section class="section" id="contacts">
-        <h2 class="section__title">Контакты</h2>
-        <p class="section__text">
-            Если у вас есть вопросы, перейдите на страницу контактов.
-        </p>
-        <a class="button button--primary" href="contacts.html">Перейти к контактам</a>
-    </section>
-
-    <section class="section faq" id="faq">
-        <h2 class="section__title">Часто задаваемые вопросы</h2>
-
-        <div class="faq__list">
-            <details class="faq__item">
-                <summary class="faq__question">Как оформить заказ?</summary>
-                <p class="faq__answer">
-                    Выберите товар в каталоге и нажмите «Заказать»,
-                    либо перейдите на страницу оформления заказа.
-                </p>
-            </details>
-
-            <details class="faq__item">
-                <summary class="faq__question">Какие товары представлены в магазине?</summary>
-                <p class="faq__answer">
-                    В учебном каталоге представлены ноутбук, смартфон,
-                    наушники и другие электронные устройства.
-                </p>
-            </details>
-
-            <details class="faq__item">
-                <summary class="faq__question">Где посмотреть характеристики товара?</summary>
-                <p class="faq__answer">
-                    Перейдите по ссылке «Подробнее» в карточке товара.
-                </p>
-            </details>
-
-            <details class="faq__item">
-                <summary class="faq__question">Отправляется ли заказ на сервер?</summary>
-                <p class="faq__answer">
-                    Нет. Это учебный проект, демонстрирующий интерфейс сайта.
-                    Реальная отправка заказов пока не настроена.
-                </p>
-            </details>
-        </div>
-    </section>
-
-</main>
-
-<div class="modal" id="orderModal" aria-hidden="true">
-    <div class="modal__overlay" data-modal-close></div>
-
-    <div class="modal__content"
-         role="dialog"
-         aria-modal="true"
-         aria-labelledby="orderModalTitle">
-
-        <button class="button button--secondary order-dialog__close"
-                type="button"
-                aria-label="Закрыть окно"
-                data-modal-close>
-            &times;
-        </button>
-
-        <h2 class="order-dialog__title" id="orderModalTitle">Оформление заявки</h2>
-
-        <form class="order-form" id="orderForm" novalidate>
-            <input type="hidden" id="productInput" name="product">
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="nameInput">Имя</label>
-                <input class="order-form__input" type="text" id="nameInput" name="name" placeholder="Введите имя" required>
-                <span class="order-form__error" id="nameError"></span>
-            </div>
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="phoneInput">Телефон</label>
-                <input class="order-form__input" type="tel" id="phoneInput" name="phone" placeholder="+7 (___) ___-__-__" required>
-                <span class="order-form__error" id="phoneError"></span>
-            </div>
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="emailInput">Email</label>
-                <input class="order-form__input" type="email" id="emailInput" name="email" placeholder="example@mail.ru" required>
-                <span class="order-form__error" id="emailError"></span>
-            </div>
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="dateInput">Дата</label>
-                <input class="order-form__input" type="date" id="dateInput" name="date" required>
-                <span class="order-form__error" id="dateError"></span>
-            </div>
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="topicInput">Товар</label>
-                <select class="order-form__select" id="topicInput" name="topic" required>
-                    <option value="">Выберите товар</option>
-                    <option value="Ноутбук">Ноутбук</option>
-                    <option value="Смартфон">Смартфон</option>
-                    <option value="Наушники">Наушники</option>
-                </select>
-                <span class="order-form__error" id="topicError"></span>
-            </div>
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="consentInput">
-                    <input class="order-form__checkbox" type="checkbox" id="consentInput" name="consent" required>
-                    Я согласен(на) на обработку данных
-                </label>
-                <span class="order-form__error" id="consentError"></span>
-            </div>
-
-            <div class="order-form__field">
-                <label class="order-form__label" for="commentInput">Комментарий</label>
-                <textarea class="order-form__textarea" id="commentInput" name="comment" rows="4" placeholder="Ваш комментарий"></textarea>
-                <span class="order-form__error" id="commentError"></span>
-            </div>
-
-            <div class="order-form__actions">
-                <button class="button button--primary" type="submit">Отправить заявку</button>
-            </div>
-
-            <p class="success-message" id="successMessage"></p>
-        </form>
-    </div>
-</div>
-
-
-<footer class="site-footer">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
-</footer>
-
-<button
-    class="scroll-top"
-    id="scrollTopButton"
-    type="button"
-    aria-label="Вернуться в начало страницы"
-    title="Наверх"
+ <head>
+  <meta charset="utf-8" />
+  <meta
+  content="width=device-width, initial-scale=1"
+  name="viewport"
+/>
+  <meta
+  content="Интернет-магазин DOMA: мебель, освещение, декор и текстиль для дома. Подбирай предметы интерьера и создавай пространство под свой стиль."
+  name="description"
+/>
+  <meta
+  content="#f7f8f4"
+  name="theme-color"
+/>
+  <title>
+   DOMA — мебель, декор и освещение для современного дома
+  </title>
+  <meta
+  content="website"
+  property="og:type"
+/>
+  <meta
+  content="ru_RU"
+  property="og:locale"
+/>
+  <meta
+  content="DOMA"
+  property="og:site_name"
+/>
+  <meta
+  content="DOMA — мебель, декор и освещение для современного дома"
+  property="og:title"
+/>
+  <meta
+  content="Интернет-магазин DOMA: мебель, освещение, декор и текстиль для дома. Подбирай предметы интерьера и создавай пространство под свой стиль."
+  property="og:description"
+/>
+  <meta
+  content="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400"
+  property="og:image"
+/>
+  <meta
+  content="summary_large_image"
+  name="twitter:card"
+/>
+  <meta
+  content="DOMA — мебель, декор и освещение для современного дома"
+  name="twitter:title"
+/>
+  <meta
+  content="Интернет-магазин DOMA: мебель, освещение, декор и текстиль для дома. Подбирай предметы интерьера и создавай пространство под свой стиль."
+  name="twitter:description"
+/>
+  <meta
+  content="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400"
+  name="twitter:image"
+/>
+  <link
+  href="css/style.css"
+  rel="stylesheet"
+/>
+  <link
+  href="css/kr3.css"
+  rel="stylesheet"
+/>
+  <link
+  href="css/responsive.css"
+  rel="stylesheet"
+/>
+  <meta
+  content="Современный интерьер гостиной в подборке DOMA"
+  property="og:image:alt"
+/>
+  <script
+  id="siteJsonLd"
+  type="application/ld+json"
 >
-    ↑
-</button>
-
-
-</body>
+   {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://werie-i.github.io/kr3-responsive-shop/#organization",
+      "name": "DOMA",
+      "url": "https://werie-i.github.io/kr3-responsive-shop/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://werie-i.github.io/kr3-responsive-shop/#website",
+      "name": "DOMA",
+      "url": "https://werie-i.github.io/kr3-responsive-shop/",
+      "inLanguage": "ru-RU"
+    }
+  ]
+}
+  </script>
+ </head>
+ <body>
+  <a
+  class="skip-link"
+  href="#main"
+>
+   Перейти к содержимому
+  </a>
+  <div class="topline">
+   ДОСТАВКА ПО РОССИИ · БЕСПЛАТНО ОТ 5 000 ₽
+  </div>
+  <header class="header">
+   <div class="container header-inner">
+    <a
+  aria-label="DOMA — на главную"
+  class="logo"
+  href="index.html"
+>
+     <span
+  aria-hidden="true"
+  class="logo-mark"
+>
+      <svg
+  focusable="false"
+  viewbox="0 0 48 48"
+>
+       <rect
+  fill="#d7ff4f"
+  height="41"
+  rx="13"
+  width="41"
+  x="3.5"
+  y="3.5"
+>
+       </rect>
+       <path
+  d="M11 36V20L24 10l13 10v16"
+  fill="none"
+  stroke="#17231d"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2.6"
+>
+       </path>
+       <path
+  d="M18 36V24a6 6 0 0 1 12 0v12"
+  fill="none"
+  stroke="#17231d"
+  stroke-linecap="round"
+  stroke-width="2.6"
+>
+       </path>
+       <path
+  d="M32.5 15.5h3.5M34.25 13.75v3.5"
+  stroke="#17231d"
+  stroke-linecap="round"
+  stroke-width="1.8"
+>
+       </path>
+      </svg>
+     </span>
+     <span class="logo-word">
+      DOMA
+      <span class="logo-dot">
+       .
+      </span>
+     </span>
+    </a>
+    <nav
+  aria-label="Основная навигация"
+  class="nav"
+  id="siteNav"
+>
+     <a
+  aria-current="page"
+  href="index.html"
+>
+      Главная
+     </a>
+     <a href="catalog.html">
+      Каталог
+     </a>
+     <a href="about.html">
+      О DOMA
+     </a>
+     <a href="contacts.html">
+      Контакты
+     </a>
+    </nav>
+    <div class="header-actions">
+     <a
+  aria-label="Личный кабинет"
+  class="icon-btn account-btn"
+  href="account.html"
+  title="Личный кабинет"
+>
+      <svg
+  aria-hidden="true"
+  viewbox="0 0 24 24"
+>
+       <circle
+  cx="12"
+  cy="8"
+  r="3.2"
+>
+       </circle>
+       <path d="M5.5 20c.7-3.4 3-5.2 6.5-5.2s5.8 1.8 6.5 5.2">
+       </path>
+      </svg>
+      <span class="header-action-label">
+       Кабинет
+      </span>
+     </a>
+     <a
+  aria-label="Корзина"
+  class="icon-btn basket-btn"
+  href="order.html"
+  title="Корзина"
+>
+      <svg
+  aria-hidden="true"
+  viewbox="0 0 24 24"
+>
+       <path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4L22 8H6">
+       </path>
+       <circle
+  cx="10"
+  cy="20"
+  r="1"
+>
+       </circle>
+       <circle
+  cx="18"
+  cy="20"
+  r="1"
+>
+       </circle>
+      </svg>
+      <span class="header-action-label">
+       Корзина
+      </span>
+     </a>
+     <button
+  aria-controls="siteNav"
+  aria-expanded="false"
+  aria-label="Открыть меню"
+  class="icon-btn menu-toggle"
+  id="menuToggle"
+>
+      ☰
+     </button>
+    </div>
+   </div>
+  </header>
+  <main id="main">
+   <section class="hero">
+    <div class="container hero-grid">
+     <div>
+      <span class="eyebrow">
+       ДОМ — ЭТО ТВОЯ ИСТОРИЯ
+      </span>
+      <h1>
+       Пространство,
+       <br/>
+       в котором
+       <em>
+        ты.
+       </em>
+      </h1>
+      <p class="hero-copy">
+       Детали с характером, уютные текстуры и вещи, которые каждый день напоминают: дома хорошо.
+      </p>
+      <a
+  class="btn btn-lime"
+  href="catalog.html"
+>
+       Перейти в каталог
+       <span>
+        ↗
+       </span>
+      </a>
+     </div>
+     <div class="hero-art">
+      <img
+  alt="Современная гостиная с диваном и мягким текстилем; интерьерная фотография для главной страницы DOMA."
+  decoding="async"
+  fetchpriority="high"
+  height="900"
+  sizes="(max-width: 700px) 100vw, 50vw"
+  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400"
+  srcset="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="1200"
+/>
+      <div class="hero-sticker">
+       MAKE
+       <br/>
+       YOURSELF
+       <br/>
+       AT HOME ✳
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="assembly-section">
+    <div class="container assembly-layout">
+     <div class="assembly-copy">
+      <span class="eyebrow">
+       СОБИРАЕМ УЮТ
+      </span>
+      <h2>
+       Хороший интерьер
+       <br/>
+       складывается
+       <em>
+        из деталей.
+       </em>
+      </h2>
+      <p>
+       Посмотри, как отдельные элементы соединяются в любимое место отдыха.
+      </p>
+      <a
+  class="text-link"
+  href="catalog.html?category=Мебель"
+>
+       Выбрать мебель ↗
+      </a>
+     </div>
+     <div
+  aria-label="Анимация сборки кресла из отдельных деталей"
+  class="assembly-stage"
+>
+      <div class="assembly-glow">
+      </div>
+      <div class="chair-part chair-back">
+      </div>
+      <div class="chair-part chair-seat">
+      </div>
+      <div class="chair-part chair-arm left">
+      </div>
+      <div class="chair-part chair-arm right">
+      </div>
+      <div class="chair-part chair-leg left">
+      </div>
+      <div class="chair-part chair-leg right">
+      </div>
+      <div class="assembly-caption">
+       FORM FOLLOWS COMFORT · DOMA
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+     <div class="section-head">
+      <div>
+       <span class="eyebrow">
+        ВЫБИРАЙ СВОЁ
+       </span>
+       <h2>
+        Что ищем сегодня?
+       </h2>
+      </div>
+      <a
+  class="text-link"
+  href="catalog.html"
+>
+       Весь каталог ↗
+      </a>
+     </div>
+     <div class="categories">
+      <a
+  class="category"
+  href="catalog.html?category=Декор"
+>
+       <strong>
+        Декор
+       </strong>
+       <span>
+        Маленькие детали →
+       </span>
+       <img
+  alt="Керамическая ваза Forma для оформления полки, консоли или журнального столика."
+  decoding="async"
+  height="900"
+  loading="lazy"
+  sizes="130px"
+  src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=400"
+  srcset="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="1200"
+/>
+      </a>
+      <a
+  class="category"
+  href="catalog.html?category=Освещение"
+>
+       <strong>
+        Свет
+       </strong>
+       <span>
+        Тёплая атмосфера →
+       </span>
+       <img
+  alt="Настольный светильник Orbit с абажуром для дополнительного освещения комнаты."
+  decoding="async"
+  height="900"
+  loading="lazy"
+  sizes="130px"
+  src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400"
+  srcset="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="1200"
+/>
+      </a>
+      <a
+  class="category"
+  href="catalog.html?category=Текстиль"
+>
+       <strong>
+        Текстиль
+       </strong>
+       <span>
+        Мягкость каждый день →
+       </span>
+       <img
+  alt="Современная гостиная с диваном и мягким текстилем; интерьерная фотография для главной страницы DOMA."
+  decoding="async"
+  height="900"
+  loading="lazy"
+  sizes="130px"
+  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400"
+  srcset="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="1200"
+/>
+      </a>
+      <a
+  class="category"
+  href="catalog.html?category=Мебель"
+>
+       <strong>
+        Мебель
+       </strong>
+       <span>
+        Форма и функция →
+       </span>
+       <img
+  alt="Стул Loop с лаконичным силуэтом для обеденной зоны или рабочего пространства."
+  decoding="async"
+  height="900"
+  loading="lazy"
+  sizes="130px"
+  src="https://images.unsplash.com/photo-1503602642458-232111445657?w=400"
+  srcset="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="1200"
+/>
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+     <div class="section-head">
+      <div>
+       <span class="eyebrow">
+        ЛЮБИМЧИКИ DOMA
+       </span>
+       <h2>
+        Популярное сейчас
+       </h2>
+      </div>
+      <a
+  class="text-link"
+  href="catalog.html"
+>
+       Перейти в каталог ↗
+      </a>
+     </div>
+     <div class="products-grid">
+      <article
+  class="product-card"
+  data-category="Декор"
+  data-name="ваза forma"
+  data-price="2490"
+>
+       <a
+  aria-label="Подробнее: Ваза Forma"
+  class="product-image"
+  href="product.html?item=forma"
+>
+        <span class="tag">
+         Новинка
+        </span>
+        <img
+  alt="Керамическая ваза Forma для оформления полки, консоли или журнального столика."
+  decoding="async"
+  height="800"
+  loading="lazy"
+  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+  src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?w=800"
+  srcset="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="800"
+/>
+       </a>
+       <div class="product-info">
+        <span class="product-category">
+         Декор
+        </span>
+        <h3>
+         Ваза Forma
+        </h3>
+        <div class="product-bottom">
+         <span class="price">
+          2 490 ₽
+         </span>
+         <button
+  aria-label="Добавить Ваза Forma в корзину"
+  class="add-btn"
+  data-add="forma"
+  type="button"
+>
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article
+  class="product-card"
+  data-category="Освещение"
+  data-name="лампа orbit"
+  data-price="5990"
+>
+       <a
+  aria-label="Подробнее: Лампа Orbit"
+  class="product-image"
+  href="product.html?item=orbit"
+>
+        <span class="tag">
+         Хит
+        </span>
+        <img
+  alt="Настольный светильник Orbit с абажуром для дополнительного освещения комнаты."
+  decoding="async"
+  height="800"
+  loading="lazy"
+  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+  src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"
+  srcset="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="800"
+/>
+       </a>
+       <div class="product-info">
+        <span class="product-category">
+         Освещение
+        </span>
+        <h3>
+         Лампа Orbit
+        </h3>
+        <div class="product-bottom">
+         <span class="price">
+          5 990 ₽
+         </span>
+         <button
+  aria-label="Добавить Лампа Orbit в корзину"
+  class="add-btn"
+  data-add="orbit"
+  type="button"
+>
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article
+  class="product-card"
+  data-category="Текстиль"
+  data-name="плед soft day"
+  data-price="3290"
+>
+       <a
+  aria-label="Подробнее: Плед Soft Day"
+  class="product-image"
+  href="product.html?item=soft"
+>
+        <img
+  alt="Современная гостиная с диваном и мягким текстилем; интерьерная фотография для главной страницы DOMA."
+  decoding="async"
+  height="800"
+  loading="lazy"
+  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+  src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800"
+  srcset="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="800"
+/>
+       </a>
+       <div class="product-info">
+        <span class="product-category">
+         Текстиль
+        </span>
+        <h3>
+         Плед Soft Day
+        </h3>
+        <div class="product-bottom">
+         <span class="price">
+          3 290 ₽
+         </span>
+         <button
+  aria-label="Добавить Плед Soft Day в корзину"
+  class="add-btn"
+  data-add="soft"
+  type="button"
+>
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+      <article
+  class="product-card"
+  data-category="Мебель"
+  data-name="стул loop"
+  data-price="8990"
+>
+       <a
+  aria-label="Подробнее: Стул Loop"
+  class="product-image"
+  href="product.html?item=loop"
+>
+        <img
+  alt="Стул Loop с лаконичным силуэтом для обеденной зоны или рабочего пространства."
+  decoding="async"
+  height="800"
+  loading="lazy"
+  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+  src="https://images.unsplash.com/photo-1503602642458-232111445657?w=800"
+  srcset="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w"
+  width="800"
+/>
+       </a>
+       <div class="product-info">
+        <span class="product-category">
+         Мебель
+        </span>
+        <h3>
+         Стул Loop
+        </h3>
+        <div class="product-bottom">
+         <span class="price">
+          8 990 ₽
+         </span>
+         <button
+  aria-label="Добавить Стул Loop в корзину"
+  class="add-btn"
+  data-add="loop"
+  type="button"
+>
+          +
+         </button>
+        </div>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container">
+     <div class="promo">
+      <div>
+       <span class="eyebrow">
+        ПЕРВЫЙ ЗАКАЗ
+       </span>
+       <h2>
+        Минус 10% на уют
+       </h2>
+       <p>
+        Подпишись на новости DOMA и получи промокод на первую покупку.
+       </p>
+      </div>
+      <a
+  class="btn"
+  href="contacts.html"
+>
+       Узнать подробнее ↗
+      </a>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-grid footer-grid-final">
+     <div class="footer-brand-final">
+      <a
+  aria-label="DOMA — на главную"
+  class="logo footer-logo"
+  href="index.html"
+>
+       <span
+  aria-hidden="true"
+  class="logo-mark"
+>
+        <svg
+  focusable="false"
+  viewbox="0 0 48 48"
+>
+         <rect
+  fill="#d7ff4f"
+  height="41"
+  rx="13"
+  width="41"
+  x="3.5"
+  y="3.5"
+>
+         </rect>
+         <path
+  d="M11 36V20L24 10l13 10v16"
+  fill="none"
+  stroke="#17231d"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2.6"
+>
+         </path>
+         <path
+  d="M18 36V24a6 6 0 0 1 12 0v12"
+  fill="none"
+  stroke="#17231d"
+  stroke-linecap="round"
+  stroke-width="2.6"
+>
+         </path>
+         <path
+  d="M32.5 15.5h3.5M34.25 13.75v3.5"
+  stroke="#17231d"
+  stroke-linecap="round"
+  stroke-width="1.8"
+>
+         </path>
+        </svg>
+       </span>
+       <span class="logo-word">
+        DOMA
+        <span class="logo-dot">
+         .
+        </span>
+       </span>
+      </a>
+      <p>
+       Вещи, которые делают дом
+       <br/>
+       местом силы и вдохновения.
+      </p>
+      <span class="brand-kicker">
+       INTERIOR · OBJECTS · HOME
+      </span>
+     </div>
+     <nav
+  aria-label="Навигация в подвале"
+  class="footer-navigation"
+>
+      <h3>
+       НАВИГАЦИЯ
+      </h3>
+      <div class="footer-links">
+       <a href="index.html">
+        Главная
+       </a>
+       <a href="catalog.html">
+        Каталог
+       </a>
+       <a href="about.html">
+        О DOMA
+       </a>
+       <a href="order.html">
+        В ящике
+       </a>
+      </div>
+     </nav>
+     <div class="footer-contact">
+      <h3>
+       МЫ НА СВЯЗИ
+      </h3>
+      <div class="footer-links">
+       <a href="contacts.html">
+        <span
+  aria-hidden="true"
+  class="footer-icon"
+>
+         ⌖
+        </span>
+        <span>
+         Москва, Тверская улица, 6с1
+        </span>
+       </a>
+       <a href="tel:+78001007108">
+        <span
+  aria-hidden="true"
+  class="footer-icon"
+>
+         ☎
+        </span>
+        <span>
+         +7 (800) 100-71-08
+        </span>
+       </a>
+       <span>
+        <span
+  aria-hidden="true"
+  class="footer-icon"
+>
+         ◷
+        </span>
+        <span>
+         Ежедневно, 12:00–00:00
+        </span>
+       </span>
+       <a href="mailto:hello@doma-shop.ru">
+        <span
+  aria-hidden="true"
+  class="footer-icon"
+>
+         ✉
+        </span>
+        <span>
+         hello@doma-shop.ru
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="copyright">
+     <span>
+      © 2026 DOMA. Все права защищены.
+     </span>
+    </div>
+   </div>
+  </footer>
+  <button
+  aria-label="Подняться наверх"
+  class="to-top sofa-lift"
+  id="toTop"
+  title="Вернуться в начало"
+>
+   <span
+  aria-hidden="true"
+  class="lift-icon"
+>
+    ▰
+   </span>
+   <span class="lift-label">
+    DOMA
+   </span>
+  </button>
+  <script
+  defer=""
+  src="js/main.js"
+>
+  </script>
+  <script
+  defer=""
+  src="js/kr3.js"
+>
+  </script>
+ </body>
 </html>

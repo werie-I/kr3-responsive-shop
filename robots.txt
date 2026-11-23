@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Поисковые и пользовательские страницы с noindex задаются метатегом robots в HTML.
+# Не запрещаем их обход, чтобы робот мог прочитать директиву noindex.
+
+Sitemap: https://werie-i.github.io/kr3-responsive-shop/sitemap.xml
